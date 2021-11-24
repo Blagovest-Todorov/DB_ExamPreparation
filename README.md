@@ -64,3 +64,24 @@ CREATE TABLE Tickets(
 )
 
 ///
+
+
+
+INSERT INTO Planes([Name],Seats,[Range])
+VALUES('Airbus 336', 112, 5132),
+        ('Airbuss 330', 432, 5325),
+		('Boeing 369', 231, 2355),
+        ('Stelt 297', 254, 2143),
+		('Airbus 558', 387, 1342),
+		('Boeing 128', 345, 5541)
+
+
+
+	INSERT INTO LuggageTypes ([Type]) 
+	VALUES('Crossbody Bag'),
+		  ('School Bagpack'),
+		  ('Shoulder Bag')
+
+
+	SELECT * FROM LuggageTypes
+
