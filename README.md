@@ -86,7 +86,8 @@ VALUES('Airbus 336', 112, 5132),
 	SELECT * FROM LuggageTypes
 
 ////
-Task 7 .
+Task 7 . ///
+
   SELECT  CONCAT(p.FirstName, ' ', p.LastName) AS [Full Name],
           f.Origin,
 	      f.Destination
