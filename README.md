@@ -95,3 +95,35 @@ Task 7 . ///
     JOIN Tickets AS t ON t.PassengerId = p.Id
     JOIN Flights AS f ON f.Id = t.FlightId
 ORDER BY [Full Name], f.Origin, f.Destination
+
+
+///
+TASK 9 ///
+
+SELECT all passengers that have trips.
+Select their fullName,(firstName and Last Name),
+plane name, 
+trip,{in format   (origin) –(destination) }
+and luggage type. 
+
+Order the results by fullName(ascending), 
+name(ascending),
+origin(ascending), 
+destination(ascending), 
+luggageType ascending. 
+
+**/
+
+SELECT 
+      CONCAT(p.FirstName, ' ', p.LastName) AS [Full Name],
+	  pl.[Name] AS [Plane Name],
+	  CONCAT(f.Origin, ' - ', f.Destination) AS [Trip] ,
+	  lt.[Type] AS [Luggage Type] 
+  FROM Passengers AS p
+  INNER JOIN Tickets AS t ON t.PassengerId = p.Id
+  INNER JOIN Flights AS f ON f.Id = t.FlightId
+  INNER JOIN Planes AS pl ON pl.Id = f.PlaneId
+  INNER JOIN Luggages AS l ON l.Id = t.LuggageId
+  INNER JOIN LuggageTypes AS lt ON lt.Id = l.LuggageTypeId
+  --WHERE f.Origin is NOT NULL AND f.Destination IS NOT NULL //not needed in this case
+  ORDER BY [Full Name],[Plane Name],f.Origin,f.Destination,[Luggage Type] 
